@@ -1,0 +1,153 @@
+﻿#taskbar a.button-melanie2_applications span.button-inner
+{
+  background: url(images/apps_list.png) 0% -1px no-repeat;
+}
+#taskbar a.button-melanie2_applications {
+	border-top: 5px solid rgb(246, 246, 246);
+}
+#taskbar a.button-melanie2_applications.button-selected {
+	border-top: 5px solid rgb(158, 194, 208);
+	font-weight: normal;
+}
+
+#header {
+    overflow-x: visible;
+}
+
+#taskbar #applications_list_m2,
+#taskbar #applications_list_m2_tips {
+	position:absolute;
+	top: 54px;
+	z-index: 250;
+	display: none;
+	right: 10px;
+	-webkit-animation: anim_app .2s;
+	animation: anim_app .2s;
+	-webkit-user-select: text;
+}
+#taskbar #applications_list_m2_tips {
+	width: 250px;
+}
+
+#taskbar #applications_list_m2 div.app_list,
+#taskbar #applications_list_m2_tips div.applications_tips {
+  	background-color: rgb(246, 246, 246);
+	box-shadow: 0px 0px 2px rgb(153, 153, 153);
+	overflow: hidden;
+}
+
+#taskbar #applications_list_m2_tips div.applications_tips {
+	padding: 15px 10px;
+	font-size: 1.2em;
+}
+
+#taskbar #applications_list_m2 div.double {
+	min-width: 500px;
+	width: 500px;
+}
+#taskbar #applications_list_m2 div.triple {
+	min-width: 450px;
+	width: 450px;
+}
+
+.minimal #taskbar #applications_list_m2 div.double {
+	width: 350px;
+	min-width: 350px;
+}
+.minimal #taskbar #applications_list_m2 div.triple {
+	width: 450px;
+	min-width: 450px;
+}
+
+#taskbar #applications_list_m2 ul {
+	list-style: none;
+	padding: 15px;
+	margin: 0px;
+}
+#taskbar #applications_list_m2 li {
+	list-style: none;
+  	float:left;
+  	margin-bottom: 15px;
+  	width: 33%;
+}
+.minimal #taskbar #applications_list_m2 li {
+	width: 33%;
+}
+
+#taskbar #applications_list_m2 li a {
+	border-bottom: 1px solid rgb(246, 246, 246);
+	border-radius: 2px;
+}
+
+.minimal #taskbar #applications_list_m2 li a {
+	padding: 20px 30px;
+}
+.minimal #taskbar .tooltip {
+	z-index: 2000;
+}
+.minimal #taskbar #applications_list_m2 .tooltip {
+	margin-top: 15px;	
+}
+
+
+#taskbar a.ui-draggable-dragging {
+    background-color: rgb(246, 246, 246);
+	box-shadow: 0px 0px 2px rgb(153, 153, 153);
+	border-radius: 4px;
+	z-index: 10;
+}
+
+#taskbar #applications_list_m2 li a.button-selected {
+	border-bottom: 1px solid rgb(158, 194, 208);
+	border-top: none;
+}
+
+.button-melanie2_applications div.arrow-up {
+	border-color: transparent;
+	border-bottom-color: rgb(246, 246, 246);
+	border-style: dashed dashed solid;
+	border-width: 0 8px 8px;
+	display: none;
+	position: absolute;
+	z-index: 251;
+	height: 0;
+	width: 0;
+	-webkit-animation: anim_app .2s;
+	animation: anim_app .2s;
+}
+
+@-webkit-keyframes anim_app{
+	0%{
+		opacity:0
+	}50%{
+		opacity:1
+	}
+}
+@keyframes anim_app{
+	0%{
+		opacity:0
+	}50%{
+		opacity:1
+	}
+}
+.minimal .button-melanie2_applications div.arrow-up {
+	left: 13px;
+	top: 41px;
+}
+.button-melanie2_applications div.arrow-up {
+	top: 46px;
+	right: 110px;
+}
+#taskbar #applications_list_m2  .drop_add_toolbar {
+	padding: 20px 15px;
+	margin: 10px;
+	font-size: 1.2em;
+	text-align: center;
+	border: 1px solid grey;
+	clear: both;
+	display: none;
+}
+
+#taskbar #applications_list_m2  .drop_add_toolbar.hover {
+	box-shadow: 0px 0px 4px rgb(153, 153, 153);
+}

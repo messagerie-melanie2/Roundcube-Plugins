@@ -1,0 +1,73 @@
+/**
+* Author:
+* Michael Kefeder
+* http://code.google.com/p/rcmail-thunderbird-labels/
+*
+* CSS is Based on a patch for roundcube 0.3 I found a long time ago
+*/
+
+.tb_label_div_manage_labels {
+	color: #2A2A2A;
+	white-space: nowrap;
+	min-width: 130px;
+	margin: 0px;
+	border-bottom: 1px solid #888;
+}
+
+.tb_label_div_manage_labels:hover {
+	color: #fff;
+	background-color: #00aad6;
+}
+
+.tb_label_div_manage_labels a {
+  	display: block;
+	color: #C0C0C0;
+	text-decoration: none;
+	min-height: 14px;
+	padding: 6px 10px;
+}
+
+#tb_label_popuplink {
+  background-image: url(thunderbird_32.png);
+  background-repeat: no-repeat;
+  background-position: 50% 0px;
+  width: 32px;
+  height: 13px;
+  padding: 28px 2px 0px 2px;
+  margin: 0px 5px 0px 5px;
+}
+
+#tb_label_popup
+{
+  width: 250px;
+  position: absolute;
+  
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+
+#tb_label_popup a.active
+{
+  color: inherit; /* fix for firefox */
+}
+
+.toolbarmenu li.label0,
+.toolbarmenu li.label0 a.active
+{
+  color: #888;
+}
+
+.messagelist tr th.labels,
+.messagelist tr td.labels {
+    width: 70px;
+}
+
+#sections-table #rcmrowlabels td.section {
+	background-image: url('images/labels_prefs.png?v=0.1');
+    background-position: 6px 0px;
+}
+
+#sections-table #rcmrowlabels.selected td.section {
+    background-position: 6px -24px;
+}
