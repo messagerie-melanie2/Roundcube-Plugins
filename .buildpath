@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<buildpath>
-	<buildpathentry kind="src" path="melanie2_applications"/>
-	<buildpathentry kind="src" path="melanie2_labels"/>
-	<buildpathentry kind="src" path="melanie2_logs"/>
-	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
-</buildpath>
