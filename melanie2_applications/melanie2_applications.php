@@ -85,25 +85,25 @@ class melanie2_applications extends rcube_plugin
                     else $icon = '';
                 } else {
                     if (!empty($app['external_url'])) $url = $app['external_url'];
-                    elseif (!empty($app['internal_url'])) $url = $app['internal_url'];
                     else $url = '';
                     if (!empty($app['external_icon'])) $icon = $app['external_icon'];
-                    elseif (!empty($app['internal_icon'])) $icon = $app['internal_icon'];
                     else $icon = '';
                 }
-                // Ajout des boutons
-                $this->api->add_content(
-                        html::tag('a', array("id" => "rcmbtn31$i", "class" => "button-".strtolower($name), "target" => "_blank", "href" => "$url", "style" => "position: relative;"),
-                                html::tag('span', array("class" => "button-inner", "style" => "background: url($icon) 0px 0px no-repeat;"),
-                                        $name
-                                )
-                        ),
-                        'taskbar');
-                $i++;
+                if (!empty($url)) {
+	                	// Ajout des boutons
+	                	$this->api->add_content(
+	                			html::tag('a', array("id" => "rcmbtn31$i", "class" => "button-".strtolower($name), "target" => "_blank", "href" => "$url", "style" => "position: relative;"),
+	                					html::tag('span', array("class" => "button-inner", "style" => "background: url($icon) 0px 0px no-repeat;"),
+	                							$name
+	                							)
+	                					),
+	                			'taskbar');
+	                	$i++;
+                }
             }
         }
-
-        $rcmail->output->set_env('applications_list', $rcmail->config->get('applications_list'));
+        
+        $rcmail->output->set_env('applications_list', $this->update_applications_list($rcmail->config->get('applications_list')));
         $rcmail->output->set_env('applications_ignore', $rcmail->config->get('applications_ignore'));
 
         // Appel le script de gestion des applications
@@ -119,9 +119,31 @@ class melanie2_applications extends rcube_plugin
         $applications_list = get_input_value('_applications_list', RCUBE_INPUT_POST);
         if (isset($applications_list)
                 && is_array($applications_list)) {
+            $applications_list['version'] = 2;
             rcmail::get_instance()->user->save_prefs(array('applications_list' => $applications_list));
         }
     }
+    /**
+     * Met à jour la liste des applications pour les utilisateurs pour les changements de versions
+     * @param array $applications_list
+     * @return array
+     */
+    private function update_applications_list($applications_list) {
+    	if (!isset($applications_list['version'])) {
+    		$applications_list['version'] = 1;
+    	}
+    	
+    	switch ($applications_list['version']) {
+    		case 1:
+    			// Update applications list to v2
+    			$applications_list[] = "button-jitsi";
+    			$applications_list = array_unique($applications_list);
+    			break;
+    	}
+    	unset($applications_list['version']);
+    	return $applications_list;
+    }
+    
     /**
      * Défini si on est dans une instance interne ou extene de l'application
      * Permet la selection de la bonne url
