@@ -18,7 +18,7 @@
 * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-$rcmail_config['applications_list'] = array();
+$rcmail_config['applications_list'] = array("version" => 2, "myapp1", "myapp2");
 $rcmail_config['applications_ignore'] = array("button-melanie2_applications");
 $rcmail_config['others_applications'] = array(
     array(
